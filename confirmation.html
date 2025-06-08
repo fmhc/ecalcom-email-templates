@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Event Calendar</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8fafc;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4f46e5;
+            margin-bottom: 8px;
+        }
+        h1 {
+            color: #1f2937;
+            margin: 0 0 16px 0;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .welcome-banner {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .content {
+            margin-bottom: 32px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #059669;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            margin: 20px 0;
+        }
+        .features {
+            background-color: #f3f4f6;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        .features h3 {
+            margin-top: 0;
+            color: #374151;
+        }
+        .features ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            color: #6b7280;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 20px;
+            margin-top: 32px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🗓️ Event Calendar</div>
+            <h1>Welcome to Event Calendar!</h1>
+        </div>
+        
+        <div class="welcome-banner">
+            <h2 style="margin: 0;">🎉 Account Created Successfully!</h2>
+            <p style="margin: 8px 0 0 0;">You're now part of the Event Calendar community</p>
+        </div>
+        
+        <div class="content">
+            <p>Hello and welcome!</p>
+            <p>Your Event Calendar account has been created successfully. To get started and activate your account, please click the confirmation button below:</p>
+            
+            <div style="text-align: center;">
+                <a href="{{ .ConfirmationURL }}" class="button">Confirm Account</a>
+            </div>
+            
+            <div class="features">
+                <h3>🚀 What you can do with Event Calendar:</h3>
+                <ul>
+                    <li><strong>Create Events:</strong> Set up and manage your events with ease</li>
+                    <li><strong>Invite Teams:</strong> Collaborate with your team members</li>
+                    <li><strong>Collect Media:</strong> Gather photos and videos from your events</li>
+                    <li><strong>Multi-venue Support:</strong> Manage multiple venues in one place</li>
+                </ul>
+            </div>
+            
+            <p>If you have any questions or need help getting started, don't hesitate to reach out to our support team.</p>
+        </div>
+        
+        <div class="footer">
+            <p>This email was sent by Event Calendar App<br>
+            If you didn't create this account, please contact support immediately.</p>
+        </div>
+    </div>
+</body>
+</html>
