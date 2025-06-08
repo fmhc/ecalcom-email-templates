@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're Invited to Event Calendar</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8fafc;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4f46e5;
+            margin-bottom: 8px;
+        }
+        h1 {
+            color: #1f2937;
+            margin: 0 0 16px 0;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .invitation-banner {
+            background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+            color: white;
+            padding: 24px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .content {
+            margin-bottom: 32px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #8b5cf6;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            margin: 20px 0;
+        }
+        .features {
+            background-color: #f8fafc;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 4px solid #8b5cf6;
+        }
+        .features h3 {
+            margin-top: 0;
+            color: #374151;
+        }
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            color: #6b7280;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 20px;
+            margin-top: 32px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🗓️ Event Calendar</div>
+            <h1>You're Invited!</h1>
+        </div>
+        
+        <div class="invitation-banner">
+            <h2 style="margin: 0;">🎉 Join Event Calendar</h2>
+            <p style="margin: 8px 0 0 0;">You've been invited to collaborate on events</p>
+        </div>
+        
+        <div class="content">
+            <p>Hello!</p>
+            <p>You've been invited to join Event Calendar, a powerful platform for managing events, collaborating with teams, and organizing memorable experiences.</p>
+            
+            <p>Click the button below to accept your invitation and set up your account:</p>
+            
+            <div style="text-align: center;">
+                <a href="{{ .ConfirmationURL }}" class="button">Accept Invitation</a>
+            </div>
+            
+            <div class="features">
+                <h3>🌟 What you'll be able to do:</h3>
+                <ul>
+                    <li><strong>Collaborate on Events:</strong> Work together with your team on event planning</li>
+                    <li><strong>Manage Venues:</strong> Access and organize venue information</li>
+                    <li><strong>Collect Media:</strong> Share and organize event photos and videos</li>
+                    <li><strong>Track Tasks:</strong> Stay organized with event planning workflows</li>
+                    <li><strong>Send Invitations:</strong> Invite guests and team members effortlessly</li>
+                </ul>
+            </div>
+            
+            <p><strong>Getting Started:</strong></p>
+            <ol>
+                <li>Click the "Accept Invitation" button above</li>
+                <li>Create your account or sign in if you already have one</li>
+                <li>Start collaborating with your team immediately</li>
+            </ol>
+            
+            <p>We're excited to have you join the Event Calendar community!</p>
+        </div>
+        
+        <div class="footer">
+            <p>This invitation was sent by Event Calendar App<br>
+            If you weren't expecting this invitation, you can safely ignore this email.</p>
+        </div>
+    </div>
+</body>
+</html>
