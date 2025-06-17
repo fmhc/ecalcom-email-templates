@@ -57,6 +57,25 @@
             font-weight: 500;
             margin: 20px 0;
         }
+        .button:hover {
+            background-color: #047857;
+        }
+        .otp-section {
+            background-color: #f0fdf4;
+            border: 2px solid #059669;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 24px 0;
+            text-align: center;
+        }
+        .otp-code {
+            font-size: 32px;
+            font-weight: bold;
+            color: #0f172a;
+            letter-spacing: 4px;
+            margin: 12px 0;
+            font-family: 'Courier New', monospace;
+        }
         .features {
             background-color: #f3f4f6;
             padding: 20px;
@@ -79,6 +98,21 @@
             padding-top: 20px;
             margin-top: 32px;
         }
+        .security-note {
+            background-color: #f3f4f6;
+            border-left: 4px solid #6b7280;
+            padding: 12px 16px;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+        .expires {
+            background-color: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 4px;
+            padding: 12px;
+            margin: 16px 0;
+            color: #92400e;
+        }
     </style>
 </head>
 <body>
@@ -94,11 +128,25 @@
         </div>
         
         <div class="content">
-            <p>Hello and welcome!</p>
-            <p>Your Event Calendar account has been created successfully. To get started and activate your account, please click the confirmation button below:</p>
+            <p>Hello{{ if .Data.full_name }} {{ .Data.full_name }}{{ end }}!</p>
+            <p>Your Event Calendar account for <strong>{{ .Email }}</strong> has been created successfully. To get started and activate your account, please confirm your email address:</p>
             
             <div style="text-align: center;">
-                <a href="{{ .ConfirmationURL }}" class="button">Confirm Account</a>
+                <a href="{{ .ConfirmationURL }}" class="button">✅ Confirm Account</a>
+            </div>
+
+            <div class="expires">
+                ⏰ <strong>Important:</strong> This confirmation link expires in 24 hours for your security.
+            </div>
+            
+            <!-- OTP Backup Section for Email Prefetching Protection -->
+            <div class="otp-section">
+                <h3 style="margin-top: 0; color: #0f172a;">Alternative: Use Verification Code</h3>
+                <p>If the button above doesn't work, use this 6-digit code in your app:</p>
+                <div class="otp-code">{{ .Token }}</div>
+                <p style="font-size: 14px; color: #064e3b; margin-bottom: 0;">
+                    Enter this code on the confirmation page at <a href="{{ .SiteURL }}" style="color: #059669;">{{ .SiteURL }}</a>
+                </p>
             </div>
             
             <div class="features">
@@ -111,12 +159,17 @@
                 </ul>
             </div>
             
+            <div class="security-note">
+                <strong>Security Notice:</strong> If you didn't create this account, please contact support immediately at <a href="{{ .SiteURL }}" style="color: #4f46e5;">{{ .SiteURL }}</a>.
+            </div>
+            
             <p>If you have any questions or need help getting started, don't hesitate to reach out to our support team.</p>
         </div>
         
         <div class="footer">
             <p>This email was sent by Event Calendar App<br>
-            If you didn't create this account, please contact support immediately.</p>
+            <a href="{{ .SiteURL }}" style="color: #4f46e5;">{{ .SiteURL }}</a></p>
+            <p>For support, contact us or visit our help center.</p>
         </div>
     </div>
 </body>

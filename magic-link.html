@@ -52,6 +52,22 @@
         .button:hover {
             background-color: #4338ca;
         }
+        .otp-section {
+            background-color: #f0f9ff;
+            border: 2px solid #0ea5e9;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 24px 0;
+            text-align: center;
+        }
+        .otp-code {
+            font-size: 32px;
+            font-weight: bold;
+            color: #0f172a;
+            letter-spacing: 4px;
+            margin: 12px 0;
+            font-family: 'Courier New', monospace;
+        }
         .footer {
             text-align: center;
             font-size: 14px;
@@ -68,6 +84,18 @@
             margin: 16px 0;
             color: #92400e;
         }
+        .security-note {
+            background-color: #f3f4f6;
+            border-left: 4px solid #6b7280;
+            padding: 12px 16px;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+        .alternative-methods {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+        }
     </style>
 </head>
 <body>
@@ -78,23 +106,46 @@
         </div>
         
         <div class="content">
-            <p>Hello!</p>
-            <p>Click the button below to sign in to your Event Calendar account. This link will securely log you in without requiring a password.</p>
+            <p>Hello{{ if .Data.full_name }} {{ .Data.full_name }}{{ end }}!</p>
+            <p>We received a sign-in request for <strong>{{ .Email }}</strong>. Click the button below to securely access your Event Calendar account.</p>
             
             <div style="text-align: center;">
-                <a href="{{ .ConfirmationURL }}" class="button">Sign In</a>
+                <a href="{{ .ConfirmationURL }}" class="button">🔐 Sign In Securely</a>
             </div>
             
             <div class="expires">
                 ⏰ <strong>Important:</strong> This link expires in 1 hour for your security.
             </div>
+
+            <!-- OTP Backup Section for Email Prefetching Protection -->
+            <div class="otp-section">
+                <h3 style="margin-top: 0; color: #0f172a;">Alternative: Use Verification Code</h3>
+                <p>If the button above doesn't work, use this 6-digit code in your app:</p>
+                <div class="otp-code">{{ .Token }}</div>
+                <p style="font-size: 14px; color: #64748b; margin-bottom: 0;">
+                    Enter this code on the sign-in page at <a href="{{ .SiteURL }}" style="color: #0ea5e9;">{{ .SiteURL }}</a>
+                </p>
+            </div>
+
+            <div class="alternative-methods">
+                <h4>Trouble signing in?</h4>
+                <ul style="font-size: 14px; color: #64748b;">
+                    <li>Make sure you're using the same device and browser where you requested the sign-in</li>
+                    <li>Check your spam folder if you can't find this email</li>
+                    <li>The link and code expire after 1 hour for security</li>
+                    <li>If you need help, contact our support team</li>
+                </ul>
+            </div>
             
-            <p>If you didn't request this sign-in link, you can safely ignore this email.</p>
+            <div class="security-note">
+                <strong>Security Notice:</strong> If you didn't request this sign-in link, you can safely ignore this email. Your account remains secure.
+            </div>
         </div>
         
         <div class="footer">
             <p>This email was sent by Event Calendar App<br>
-            If you have any questions, please contact support.</p>
+            <a href="{{ .SiteURL }}" style="color: #4f46e5;">{{ .SiteURL }}</a></p>
+            <p>For support, contact us or visit our help center.</p>
         </div>
     </div>
 </body>
