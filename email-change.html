@@ -92,7 +92,7 @@
             </div>
             
             <div style="text-align: center;">
-                <a href="{{ .ConfirmationURL }}" class="button">Confirm New Email</a>
+                <a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email_change" class="button">Confirm New Email</a>
             </div>
             
             <div class="expires">

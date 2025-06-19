@@ -110,13 +110,13 @@
             <p>We received a sign-in request for <strong>{{ .Email }}</strong>. Click the button below to securely access your Event Calendar account.</p>
             
             <div style="text-align: center;">
-                <a href="{{ .ConfirmationURL }}" class="button">🔐 Sign In Securely</a>
+                <a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=magiclink" class="button">🔐 Sign In Securely</a>
             </div>
             
             <div class="expires">
                 ⏰ <strong>Important:</strong> This link expires in 1 hour for your security.
             </div>
-
+            
             <!-- OTP Backup Section for Email Prefetching Protection -->
             <div class="otp-section">
                 <h3 style="margin-top: 0; color: #0f172a;">Alternative: Use Verification Code</h3>

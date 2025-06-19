@@ -97,7 +97,7 @@
             <p>Click the button below to accept your invitation and set up your account:</p>
             
             <div style="text-align: center;">
-                <a href="{{ .ConfirmationURL }}" class="button">Accept Invitation</a>
+                <a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=invite" class="button">Accept Invitation</a>
             </div>
             
             <div class="features">
